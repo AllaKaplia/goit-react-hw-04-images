@@ -56,7 +56,9 @@ export default function App() {
       }
     };
 
-    foundImages();
+    if (imagesName !== '') {
+      foundImages();
+    }
 
     return () => {
       abortController.abort();
