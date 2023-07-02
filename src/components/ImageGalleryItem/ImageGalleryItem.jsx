@@ -8,6 +8,7 @@ export default function ImageGalleryItem({ id, webformatURL, largeImageURL, tags
 
   const toggleModal = () => {
     setShowModal(!showModal);
+    document.body.style.overflow = showModal ? "auto" : "hidden"; 
   };
 
   return (
