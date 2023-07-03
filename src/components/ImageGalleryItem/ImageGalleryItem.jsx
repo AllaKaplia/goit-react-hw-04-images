@@ -1,5 +1,5 @@
+import Modal from "components/Modal";
 import { useState } from "react";
-import ReactModal from "react-modal";
 import { GalleryItem, ImageGallery } from "./ImageGalleryItem.styled";
 
 
@@ -16,13 +16,9 @@ export default function ImageGalleryItem({ id, webformatURL, largeImageURL, tags
       <GalleryItem key={id}>
         <ImageGallery src={webformatURL} alt={tags} onClick={toggleModal} />
       </GalleryItem>
-      <ReactModal
-        isOpen={showModal}
-        onRequestClose={toggleModal}
-        contentLabel="Image Modal"
-      >
+      <Modal isOpen={showModal} onRequestClose={toggleModal} contentLabel="Image Modal">
         <img src={largeImageURL} alt={tags} />
-      </ReactModal>
+      </Modal>
     </>
   );
 }
