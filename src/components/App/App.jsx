@@ -10,6 +10,7 @@ import { Container } from './App.styled';
 import { theme } from "components/ErrorMessage/ErrorMessage";
 import { ErrorMessage } from "components/ErrorMessage/ErrorMessage";
 import { ThemeProvider } from '@emotion/react';
+import Modal from "react-modal";
 
 export default function App() {
   const [imagesName, setImagesName] = useState('');
@@ -64,6 +65,10 @@ export default function App() {
       abortController.abort();
     };
   }, [imagesName, page]);
+
+  useEffect(() => {
+    Modal.setAppElement("#root");
+  }, []);
 
   const handleSearchNameSubmit = (name) => {
     if(imagesName === name){
